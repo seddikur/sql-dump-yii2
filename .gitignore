@@ -24,35 +24,13 @@ composer.phar
 # phpunit itself is not needed
 phpunit.phar
 # local phpunit config
-/phpunit.xml
+
 
 #/tests/
 #tests/_output/*
-tests/_support/_generated
 
 
-backup_db/
 
 #
 
-/composer.lock
-/LICENSE.md
-/README.md
-/requirements.php
-/yii
-/yii.bat
-/codeception.yml
-/.bowerrc
-commands/HelloController.php
-config/test_db.php
-config/test.php
-config/params.php
-config/console.php
-models/tables/ServiceListTable.php
-models/tables/PatientMisTable.php
-models/User.php
-models/PatientModel.php
-models/LoginForm.php
-mail/layouts/html.php
-/tests/
-widgets/Alert.php
+
