@@ -1,0 +1,33 @@
+version: '2'
+services:
+  php:
+    container_name: php
+    image: yiisoftware/yii2-php:7.4-apache
+    volumes:
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      - ./:/app:delegated
+    ports:
+      - '8000:80'
+  mysql:
+    container_name: yii2_sql
+    image: mysql:5.7.34
+    volumes:
+      - ./.docker/sql/:/var/lib/mysql
+      - ./.docker/mysql:/etc/mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=yii
+      - MYSQL_USER=yii
+      - MYSQL_PASSWORD=yii
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+      PMA_HOST: mysql
+      MYSQL_USERNAME: root
+      MYSQL_ROOT_PASSWORD: secret
