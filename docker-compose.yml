@@ -8,6 +8,7 @@ services:
       - ./:/app:delegated
     ports:
       - '8000:80'
+
   mysql:
     container_name: yii2_sql
     image: mysql:5.7.34
@@ -21,13 +22,14 @@ services:
       - MYSQL_DATABASE=yii
       - MYSQL_USER=yii
       - MYSQL_PASSWORD=yii
+
   phpmyadmin:
-    container_name: phpmyadmin
-    image: phpmyadmin
-    restart: always
-    ports:
-      - 8081:80
-    environment:
-      PMA_HOST: mysql
-      MYSQL_USERNAME: root
-      MYSQL_ROOT_PASSWORD: secret
+      container_name: phpmyadmin
+      image: phpmyadmin
+      restart: always
+      ports:
+        - 8081:80
+      environment:
+        PMA_HOST: mysql
+        MYSQL_USERNAME: root
+        MYSQL_ROOT_PASSWORD: secret

@@ -28,7 +28,7 @@ phpunit.phar
 
 #/tests/
 #tests/_output/*
-
+.docker/sql
 
 
 #

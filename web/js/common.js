@@ -144,7 +144,7 @@ $(document).ready(function () {
 	$('body').on('click', '#dbImportAll', function () {
 		// var date = new Date();
 		// const dateStr = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + '-' + date.getHours() + '-' + date.getMinutes() + '-' + date.getSeconds();
-		// if (DEBUG) console.log(dateStr);
+		if (DEBUG) console.log(dateStr);
 		startDB();
 		$.ajax({
 			url: URL_TABLES,

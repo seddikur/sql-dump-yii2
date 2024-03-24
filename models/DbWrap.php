@@ -3,7 +3,7 @@
 namespace app\models;
 
 use Yii;
-use yii\bootstrap\Modal;
+use yii\bootstrap5\Modal;
 use yii\caching\Cache;
 use yii\db\ActiveRecord;
 use yii\db\Exception;
@@ -214,7 +214,7 @@ class DbWrap extends ActiveRecord{
 		$migrations[] = "ALTER TABLE `patients_mis` ADD COLUMN `lastdate` DATE NULL AFTER `insurance_id`, ADD COLUMN `nvisit` INT NULL AFTER `lastdate`;";
 
 		$transaction = $db->beginTransaction();
-		//echo '<pre>$transaction ', print_r(get_class_methods($transaction), true), '</pre>';
+//		echo '<pre> $transaction '. print_r(get_class_methods($transaction), true). '</pre>';
 		//exit(PHP_EOL . __FILE__ . '::' . __LINE__ . PHP_EOL);
 		try{
 			foreach($migrations as $migrate) $db->createCommand($migrate)->execute();

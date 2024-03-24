@@ -5,7 +5,7 @@ namespace app\widgets;
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\widgets\Breadcrumbs;
-use yii\bootstrap\Html;
+use yii\bootstrap5\Html;
 use yii\helpers\ArrayHelper;
 
 class MyBreadcrumbs extends Breadcrumbs {
